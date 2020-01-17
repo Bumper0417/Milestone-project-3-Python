@@ -38,11 +38,14 @@ def insert_recipe():
     # I want to transform it as a list (array)
 
     # I get the value :
-    recipe_ingredients = my_user_data['recipe_ingredients']          # string
+    recipe_ingredients = my_user_data['recipe_ingredients']         # string
     recipe_ingredients_as_an_array = recipe_ingredients.split(",")  # list (each item is separated by a ",")
+    recipe_allergens = my_user_data['recipe_allergens']
+    recipe_allergens_as_an_array = recipe_allergens.split(",")
 
     # Update the dictionary key's value :
     my_user_data['recipe_ingredient'] = recipe_ingredients_as_an_array
+    my_user_data['recipe_allergens'] = recipe_allergens_as_an_array
     
     # Send it to the database: 
     recipes.insert_one(my_user_data)
