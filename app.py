@@ -24,7 +24,29 @@ def add_recipe():
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
     recipes = mongo.db.recipes
-    recipes.insert_one(request.form.to_dict())
+    
+    # get the data from the form into a dictionary I can work with
+    my_user_data = request.form.to_dict()
+
+    # print the data in the console
+    print(my_user_data)
+
+    # my_user_data = {'recipe_name': 'bruschetta',
+    #                 'recipe_ingredient': 'this - that - foo - bar'}
+
+    # My "recipe_ingredient" field's value is of data type "string"
+    # I want to transform it as a list (array)
+
+    # I get the value :
+    recipe_ingredients = my_user_data['recipe_ingredients']          # string
+    recipe_ingredients_as_an_array = recipe_ingredients.split(",")  # list (each item is separated by a ",")
+
+    # Update the dictionary key's value :
+    my_user_data['recipe_ingredient'] = recipe_ingredients_as_an_array
+    
+    # Send it to the database: 
+    recipes.insert_one(my_user_data)
+
     return redirect(url_for('get_recipes'))
 
 
