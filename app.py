@@ -67,21 +67,60 @@ def edit_recipe(recipe_id):
 @app.route('/update_recipe/<recipe_id>', methods=['POST'])
 def update_recipe(recipe_id):
     recipes = mongo.db.recipes
-    recipes.update( {'_id': ObjectId(recipe_id)}, 
-    {
-        'recipe_name' : request.form.get('recipe_name'),
-        'category_name' : request.form.get('category_name'),
-        'image_url' : request.form.get('image_url'),
-        'recipe_ingredients' : request.form.get('recipe_ingredients'),
-        'recipe_method' : request.form.get('recipe_method'),
-        'recipe_country_of_origin' : request.form.get('recipe_country_of_origin'),
-        'recipe_vegeterian' : request.form.get('recipe_vegeterian'),
-        'recipe_vegan' : request.form.get('recipe_vegan'),
-        'recipe_allergens' : request.form.get('recipe_allergens'),
-        'recipe_nutricion' : request.form.get('recipe_nutricion')
-    })
+    recipes.update({'_id': ObjectId(recipe_id)},
+        {
+            'recipe_name': request.form.get('recipe_name'),
+            'category_name': request.form.get('category_name'),
+            'image_url': request.form.get('image_url'),
+            'recipe_ingredients': request.form.get('recipe_ingredients'),
+            'recipe_method': request.form.get('recipe_method'),
+            'recipe_country_of_origin': request.form.get('recipe_country_of_origin'),
+            'recipe_vegeterian': request.form.get('recipe_vegeterian'),
+            'recipe_vegan': request.form.get('recipe_vegan'),
+            'recipe_allergens': request.form.get('recipe_allergens'),
+            'recipe_nutricion': request.form.get('recipe_nutricion')
+        })
     return redirect(url_for('get_recipes'))
 
+@app.route('/delete_recipe/<recipe_id>')
+def delete_recipe(recipe_id):
+    mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
+    return redirect(url_for('get_recipes'))
+
+@app.route('/get_categories')
+def get_categories():
+    return render_template('categories.html',
+    categories=mongo.db.categories.find())
+
+@app.route('/edit_category/<category_id>')
+def edit_category(category_id):
+    return render_template('editcategory.html',
+    category=mongo.db.categories.find_one({'_id': ObjectId(category_id)}))
+
+@app.route('/update_category/<category_id>', methods=['POST'])
+def update_category(category_id):
+    mongo.db.categories.update(
+        {'_id': ObjectId(category_id)},
+        {'category_name': request.form.get('category_name'),
+        'image_url':request.form.get('image_url')})
+    return redirect(url_for('get_categories'))
+
+@app.route('/delete_category/<category_id>')
+def delete_category(category_id):
+    mongo.db.categories.remove({'_id': ObjectId(category_id)})
+    return redirect(url_for('get_categories'))
+
+@app.route('/insert_category', methods=['POST'])
+def insert_category():
+    categories = mongo.db.categories
+    category_doc = {'category_name': request.form.get('category_name'),
+                    'image_url':request.form.get('image_url')}
+    categories.insert_one(category_doc)
+    return redirect(url_for('get_categories'))
+
+@app.route('/new_category')
+def new_category():
+    return render_template('addcategory.html')
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
