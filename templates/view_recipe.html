@@ -1,0 +1,19 @@
+{% extends 'index.html' %}  
+ {% block content %}         
+    
+        
+        
+            <div class="recipe_header col s9">
+                <strong>{{recipe.recipe_name}}</strong> - {{recipe.category_name}}
+            </div>
+            <span>
+                <img src="{{recipe.image_url}}">
+                {{recipe.recipe_ingredients}}
+                {{recipe.recipe_method}}
+                {{recipe.recipe_country_of_origin}}
+                {{recipe.recipe_vegetarian}}
+                {{recipe.recipe_vegan}}
+                {{recipe.recipe_allergens}}
+                {{recipe.recipe_nutricion}}
+            </span>
+{% endblock %}

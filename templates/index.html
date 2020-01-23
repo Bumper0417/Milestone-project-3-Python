@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
     
     </head>
     <body>
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="{{url_for('get_recipes')}}" class="brand-logo">Happy Cooking</a>
+                <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="{{url_for('get_recipes')}}">Our Recipes</a></li>
+                    <li><a href="{{url_for('add_recipe')}}">Add Your Recipe!</a></li>
+                    <li><a href="{{url_for('get_categories')}}">Categories</a></li>
+                </ul>
+                <ul id="slide-out" class="sidenav">
+                    <li><a href="{{url_for('get_recipes')}}">Our Recipes</a></li>
+                    <li><a href="{{url_for('add_recipe')}}">Add Your Recipe!</a></li>
+                    <li><a href="{{url_for('get_categories')}}">Categories</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
         <div class="container">
             <h1> Discover your passion about cooking </h1>
             {% block content %}
@@ -18,6 +39,7 @@
             $(document).ready(function(){
                 $('.collapsible').collapsible();
                 $('select').formSelect();
+                $('.sidenav').sidenav();
             });
         </script>
     </body>
