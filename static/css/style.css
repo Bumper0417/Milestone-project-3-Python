@@ -17,3 +17,16 @@
 body{
     background-color: #9f6060;
 }
+
+.row{
+    color: white;
+}
+
+h2, h3, h4{
+    color:aliceblue;
+    text-align: center;
+}
+
+.recipe_header{
+    color:black;
+}

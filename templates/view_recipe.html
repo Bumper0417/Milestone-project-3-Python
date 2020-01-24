@@ -1,19 +1,45 @@
-{% extends 'index.html' %}  
- {% block content %}         
-    
-        
-        
-            <div class="recipe_header col s9">
-                <strong>{{recipe.recipe_name}}</strong> - {{recipe.category_name}}
-            </div>
-            <span>
-                <img src="{{recipe.image_url}}">
-                {{recipe.recipe_ingredients}}
-                {{recipe.recipe_method}}
-                {{recipe.recipe_country_of_origin}}
-                {{recipe.recipe_vegetarian}}
-                {{recipe.recipe_vegan}}
-                {{recipe.recipe_allergens}}
-                {{recipe.recipe_nutricion}}
-            </span>
+{% extends 'base.html' %}  
+ {% block content %} 
+    <div class="row">
+        <h3>{{recipe.recipe_name}}</h3> 
+    </div> 
+    <div class="row">
+        <div class="col s6 heading">
+            <p>COUNTRY OF ORIGIN : {{recipe.recipe_country_of_origin}}</p>
+        </div>
+        <div class="col s6 heading">
+            <p>CATEGORY : {{recipe.category_name}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <img src="{{recipe.image_url}}">
+    </div>
+    <div class="row">
+        <p>INGREDIENTS :</p>
+        {{recipe.recipe_ingredients}}
+    </div>       
+    <div class="row">
+        <p>COOKING METHOD :</p>
+        {{recipe.recipe_method}}
+    </div> 
+    <div class="row">
+        <p>IS THE RECIPE FOR VEGETERIANS?</p>
+        {{recipe.recipe_vegetarian}}
+    </div>
+    <div class="row">
+        <p>IS THE RECIPE FOR VEGANS?</p>
+        {{recipe.recipe_vegan}}
+    </div>
+    <div class="row">
+        <p>ALLERGENS :</p>
+        {{recipe.recipe_allergens}}
+    </div>
+    <div class="row">
+        <p>NUTRICION :</p>
+        {{recipe.recipe_nutricion}}
+    </div>
+    <div class="row">
+        <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn btn_small blue">Edit</a>
+        <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn btn_small red">Delete</a>
+    </div>
 {% endblock %}
