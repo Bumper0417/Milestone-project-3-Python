@@ -14,6 +14,9 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_recipes')
 def get_recipes():
+    #suitability = request.args.get('suitability')
+    #country = request.args.get('country')
+    #category = request.args.get('category')
     return render_template("recipes.html", recipes=mongo.db.recipes.find())
 
 @app.route('/add_recipe')
@@ -67,7 +70,9 @@ def edit_recipe(recipe_id):
 @app.route('/update_recipe/<recipe_id>', methods=['POST'])
 def update_recipe(recipe_id):
     recipes = mongo.db.recipes
-    recipes.update({'_id': ObjectId(recipe_id)},
+    print(request.form.get('is_vegeterian'))
+    print(request.form.get('is_vegan'))
+    mongo.db.recipes.update({'_id': ObjectId(recipe_id)},
         {
             'recipe_name': request.form.get('recipe_name'),
             'category_name': request.form.get('category_name'),
@@ -75,8 +80,8 @@ def update_recipe(recipe_id):
             'recipe_ingredients': request.form.get('recipe_ingredients'),
             'recipe_method': request.form.get('recipe_method'),
             'recipe_country_of_origin': request.form.get('recipe_country_of_origin'),
-            'recipe_vegeterian': request.form.get('recipe_vegeterian'),
-            'recipe_vegan': request.form.get('recipe_vegan'),
+            'recipe_vegetarian': request.form.get('is_vegeterian'),
+            'recipe_vegan': request.form.get('is_vegan'),
             'recipe_allergens': request.form.get('recipe_allergens'),
             'recipe_nutricion': request.form.get('recipe_nutricion')
         })
@@ -85,8 +90,8 @@ def update_recipe(recipe_id):
 #View Recipe
 @app.route('/view_recipe/<recipe_id>')
 def view_recipe(recipe_id):
-    recipes =  mongo.db.recipes
-    my_recipe =  mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    recipes = mongo.db.recipes
+    my_recipe = recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template('view_recipe.html', recipe=my_recipe)
 
 

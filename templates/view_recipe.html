@@ -1,5 +1,7 @@
 {% extends 'base.html' %}  
- {% block content %} 
+ {% block content %}
+
+
     <div class="row">
         <h3>{{recipe.recipe_name}}</h3> 
     </div> 
@@ -24,11 +26,21 @@
     </div> 
     <div class="row">
         <p>IS THE RECIPE FOR VEGETERIANS?</p>
-        {{recipe.recipe_vegetarian}}
+        {% if recipe.recipe_vegetarian %}
+            <p>YES</p>
+        {% else %}
+            <p>NO</p>
+        {% endif %}
+
+
     </div>
     <div class="row">
         <p>IS THE RECIPE FOR VEGANS?</p>
-        {{recipe.recipe_vegan}}
+        {% if recipe.recipe_vegan %}
+            <p>YES</p>
+        {% else %}
+            <p>NO</p>
+        {% endif %}
     </div>
     <div class="row">
         <p>ALLERGENS :</p>

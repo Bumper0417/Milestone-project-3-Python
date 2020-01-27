@@ -4,9 +4,39 @@
     <h2>Discover your passion about Cooking!</h2>
     <h4>Check our Recipes by Clicking the View Button</h4>
     
+    <form action="{{url_for('get_recipes')}}" method="GET">
+        <div>
+            <label for="suitability">Suitability</label>
+            <select name="suitability" id="suitability">
+                <option value="all">All</option>
+                <option value="veg">Vegeterian</option>
+                <option value="vegan">Vegan</option>
+            </select>
+        </div>
+        <div>
+            <label for="country">Country</label>
+                <select name="country" id="country">
+                    <option value="all">All</option>
+                    <option value="mexico">Mexico</option>
+                    <option value="italy">Italy</option>
+                    <option value="greece">Greece</option>
+                    <option value="thai">Thai</option>
+                </select>
+        </div>
+        <div>
+            <label for="category">Category</label>
+                <select name="category" id="category">
+                    <option value="all">All</option>
+                    <option value="mexico">Starters</option>
+                    <option value="italy">Appetisers</option>
+                    <option value="greece">Main Courses</option>
+                    <option value="thai">Desserts</option>
+                </select>
+        </div>
+        <a href="{{url_for('get_recipes')}}" class="waves-effect waves-light btn blue">Search for Recipes</a>
+    </form> 
         
-        
-
+    <br>
     {% for recipe in recipes %}
         <div class="collapsible-header">
         

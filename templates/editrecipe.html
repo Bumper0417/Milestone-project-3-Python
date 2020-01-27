@@ -1,6 +1,9 @@
 {% extends 'index.html' %}
 {% block content %}
+
+
 <h3> Edit Recipe!</h3>
+
 <div class="row">
 	<form action="{{url_for('update_recipe', recipe_id=recipe._id)}}" method="POST" class="col s12">
 
@@ -60,12 +63,16 @@
 				<div class="switch">
 				<i class="material-icons prefix">shopping_basket</i>
 					<label> Is the recipe Vegeterian?
-                        {% if recipe.vegeterian %}
-                            <input id="recipe.vegeterian" name="recipe_vegeterian" type="checkbox" checked> 
+                    {{ recipe.recipe_vegetarian }}
+                        {% if recipe.recipe_vegetarian == "on" %}
+                        
+                            <input id="is_vegeterian" name="is_vegeterian" type="checkbox" checked> 
                         {% else %}
-                            <input id="recipe.vegeterian" name="recipe_vegeterian" type="checkbox"> 
+                        
+                            <input id="is_vegeterian" name="is_vegeterian" type="checkbox"> 
                         {% endif %}
                         <span class="lever"></span>
+                        Is Vegeterian
                     </label>
 				</div>
 			</div>
@@ -75,12 +82,14 @@
 				<div class="switch">
 				<i class="material-icons prefix">shopping_basket</i>
 					<label> Is the recipe Vegan?
-                        {% if recipe.vegan %}
-                            <input id="recipe.vegan" name="recipe_vegan" type="checkbox" checked> 
+                        {{ recipe.recipe_vegan }}
+                        {% if recipe.recipe_vegan == "on" %}
+                            <input id="is_vegan" name="is_vegan" type="checkbox" checked> 
                         {% else %}
-                            <input id="recipe.vegan" name="recipe_vegan" type="checkbox"> 
+                            <input id="is_vegan" name="is_vegan" type="checkbox"> 
                         {% endif %}
                         <span class="lever"></span>
+                        Is Vegan
                     </label>
 				</div>
 			</div>
