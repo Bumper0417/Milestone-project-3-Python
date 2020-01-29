@@ -26,35 +26,35 @@
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">assignment</i>
-				<input id="recipe_name" name="recipe_name" type="text" class="validate" value="{{recipe.recipe_name}}">
+				<input id="recipe_name" name="recipe_name" type="text" class="validate" value="{{recipe.recipe_name}}" required>
 				<label for="icon_prefix">Recipe Name</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">insert_photo</i>
-				<input id="image_url" name="image_url" type="text" class="validate" value="{{recipe.image_url}}">
+				<input id="image_url" name="image_url" type="text" class="validate" value="{{recipe.image_url}}" required>
 				<label for="icon_prefix">Upload the Image link</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">local_grocery_store</i>
-				<textarea name="recipe_ingredients" id="recipe_ingredients" class="materialize-textarea">{{recipe.recipe_ingredients}}</textarea>
+				<textarea name="recipe_ingredients" id="recipe_ingredients" class="materialize-textarea" required>{{recipe.recipe_ingredients}}</textarea>
 				<label for="icon_telephone">Ingredients</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">local_dining</i>
-				<textarea name="recipe_method" id="recipe_method" class="materialize-textarea">{{recipe.recipe_method}}</textarea>
+				<textarea name="recipe_method" id="recipe_method" class="materialize-textarea" required>{{recipe.recipe_method}}</textarea>
 				<label for="icon_telephone">Cooking Method</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">location_city</i>
-				<textarea name="recipe_country_of_origin" id="recipe_country_of_origin" class="materialize-textarea">{{recipe.recipe_country_of_origin}}</textarea>
+				<textarea name="recipe_country_of_origin" id="recipe_country_of_origin" class="materialize-textarea" required>{{recipe.recipe_country_of_origin}}</textarea>
 				<label for="icon_telephone">Country of Origin</label>
 			</div>
 		</div>
@@ -97,14 +97,14 @@
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">pregnant_woman</i>
-				<textarea name="recipe_allergens" id="recipe_allergens" class="materialize-textarea">{{recipe.recipe_allergens}}</textarea>
+				<textarea name="recipe_allergens" id="recipe_allergens" class="materialize-textarea" required>{{recipe.recipe_allergens}}</textarea>
 				<label for="icon_telephone">What are the allergens of the recipe?</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">battery_charging_full</i>
-				<textarea name="recipe_nutricion" id="recipe_nutricion" class="materialize-textarea">{{recipe.recipe_nutricion}}</textarea>
+				<textarea name="recipe_nutricion" id="recipe_nutricion" class="materialize-textarea" required>{{recipe.recipe_nutricion}}</textarea>
 				<label for="icon_telephone">Give us some info about the nutricion of the recipe</label>
 			</div>
 		</div>
