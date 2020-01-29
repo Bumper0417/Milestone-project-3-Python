@@ -15,6 +15,8 @@ mongo = PyMongo(app)
 @app.route('/get_recipes')
 def get_recipes():
     suitability= request.args.get('suitability')
+    country= request.args.get('country')
+    category= request.args.get('category')
 
     return render_template("recipes.html", recipes=mongo.db.recipes.find())
 

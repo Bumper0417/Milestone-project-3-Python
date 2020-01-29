@@ -4,7 +4,7 @@
     <h2>Discover your passion about Cooking!</h2>
     <h4>Check our Recipes by Clicking the View Button</h4>
     
-    <form action="{{url_for('get_recipes')}}" method="GET">
+    <form action="{{url_for('get_recipes'), suitability, country, category}}" method="GET">
         <div>
             <label for="suitability">Suitability</label>
             <select name="suitability" id="suitability">
