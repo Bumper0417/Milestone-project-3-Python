@@ -135,9 +135,9 @@ All the wireframes of the webpage are created by me.
 ### Acknowledgements
 
 I recieved inspiration from sites such as: 
-    - [W3schools](https://www.w3schools.com/)
-    - [Stackflow](https://stackoverflow.com/)
-    - [Youtube](https://www.youtube.com/watch?v=dTN8cBDEG_Q&feature=youtu.be)
-    - [MongoDB](https://docs.mongodb.com/manual/text-search/#example)
-    - [Github](https://github.com/Code-Institute-Submissions/COOK-BOOK-4)
+- [W3schools](https://www.w3schools.com/)
+- [Stackflow](https://stackoverflow.com/)
+- [Youtube](https://www.youtube.com/watch?v=dTN8cBDEG_Q&feature=youtu.be)
+- [MongoDB](https://docs.mongodb.com/manual/text-search/#example)
+- [Github](https://github.com/Code-Institute-Submissions/COOK-BOOK-4)
 
