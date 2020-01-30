@@ -20,6 +20,16 @@ def get_recipes():
 
     return render_template("recipes.html", recipes=mongo.db.recipes.find())
 
+### Insert text index
+
+#db.stores.insert(
+   #[
+     #{ _id: 1, name: "suitability", description: "all vegeterian vegan" },
+     #{ _id: 2, name: "country", description: "Italy Greece Mexico Thai" },
+     #{ _id: 3, name: "category", description: "Starters Appetisers Main Courses Desserts" }
+   #]
+#)
+
 @app.route('/add_recipe')
 def add_recipe():
     return render_template('addrecipe.html',
