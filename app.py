@@ -14,21 +14,23 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_recipes')
 def get_recipes():
-    suitability= request.args.get('suitability')
+  
     country= request.args.get('country')
     category= request.args.get('category')
 
     return render_template("recipes.html", recipes=mongo.db.recipes.find())
 
 ### Insert text index
+@app.route('/test')
+def test():
+    filter = {}
+    suitability = request.args.get('suitability')
+    if suitability == 'veg':
+        filter.recipe_vegeterian == True
+    recipes = mongo.db.recipes.find(filter)
+    return render_template('test.html', recipes=recipes)
 
-#db.stores.insert(
-   #[
-     #{ _id: 1, name: "suitability", description: "all vegeterian vegan" },
-     #{ _id: 2, name: "country", description: "Italy Greece Mexico Thai" },
-     #{ _id: 3, name: "category", description: "Starters Appetisers Main Courses Desserts" }
-   #]
-#)
+
 
 @app.route('/add_recipe')
 def add_recipe():
