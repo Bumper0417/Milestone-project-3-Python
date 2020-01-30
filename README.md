@@ -21,6 +21,11 @@ My main purpose when creating the webpage was to ensure that it covers a wide ra
 - As a user I want to access the webpage from all differend types of divices (MObile Phones, Desktops,Laptops, Tablets, etc.)
 - As a user of the webpage I want to be able to insert an image in when inserting or updating a recipe. 
 
+## Wireframes 
+
+![Mobile-Version](static/wireframes/IMG_4847.jpg)
+![Desktop-Version](static/wireframes/IMG_4846.jpg)
+
 ## Features
 
 - Happy Cooking is a webpage that allows the user to have an easy access and by clicking the "Happy Cooking" logo to always redirect to the home page.
