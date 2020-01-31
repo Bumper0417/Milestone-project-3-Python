@@ -47,9 +47,31 @@ def insert_recipe():
     my_user_data = request.form.to_dict()
 
     # print the data in the console
-    print(my_user_data)
+    if 'recipe_vegetarian' in my_user_data:
+        my_user_data['recipe_vegetarian'] = True
+        my_user_data['recipe_vegetarian']
+    else:
+        my_user_data['recipe_vegetarian'] = False
 
-    # Send it to the database: 
+
+    # recipe_vegetarian = my_user_data['recipe_vegetarian']
+    
+    to_insert = ""
+
+    # if recipe_vegetarian == "on":
+    #     to_insert = True
+    # else:
+    #     to_insert = False
+
+    """recipe_vegan = my_user_data['recipe_vegan']
+    if recipe_vegan == "on":
+        to_insert = True
+    else:
+        to_insert = False"""
+
+    # Send it to the database:
+    my_user_data['recipe_vegetarian'] = to_insert
+    ###my_user_data['recipe_vegan'] = to_insert 
     recipes.insert_one(my_user_data)
 
     return redirect(url_for('get_recipes'))
