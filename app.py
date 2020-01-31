@@ -26,8 +26,10 @@ def test():
     filter = {}
     suitability = request.args.get('suitability')
     if suitability == 'veg':
-        filter.recipe_vegeterian == True
+        filter['recipe_vegetarian'] = True
+    print(filter)
     recipes = mongo.db.recipes.find(filter)
+   
     return render_template('test.html', recipes=recipes)
 
 
@@ -47,28 +49,6 @@ def insert_recipe():
     # print the data in the console
     print(my_user_data)
 
-    # my_user_data = {'recipe_name': 'bruschetta',
-    #                 'recipe_ingredient': 'this - that - foo - bar'}
-
-    # My "recipe_ingredient" field's value is of data type "string"
-    # I want to transform it as a list (array)
-
-    # I get the value :
-    recipe_method = my_user_data['recipe_method']
-    recipe_method_as_an_array = recipe_method.split(",")
-    recipe_ingredients = my_user_data['recipe_ingredients']         # string
-    recipe_ingredients_as_an_array = recipe_ingredients.split(",")  # list (each item is separated by a ",")
-    recipe_allergens = my_user_data['recipe_allergens']
-    recipe_allergens_as_an_array = recipe_allergens.split(",")
-
-    #remove the \r\n from the recipe_method
-    recipe_method = [method.replace("\r\n","") for method in recipe_method]
-
-    # Update the dictionary key's value :
-    my_user_data['recipe_ingredients'] = recipe_ingredients_as_an_array
-    my_user_data['recipe_allergens'] = recipe_allergens_as_an_array
-    my_user_data['recipe_method'] = recipe_method_as_an_array
-
     # Send it to the database: 
     recipes.insert_one(my_user_data)
 
@@ -83,8 +63,6 @@ def edit_recipe(recipe_id):
 @app.route('/update_recipe/<recipe_id>', methods=['POST'])
 def update_recipe(recipe_id):
     recipes = mongo.db.recipes
-    print(request.form.get('is_vegeterian'))
-    print(request.form.get('is_vegan'))
     mongo.db.recipes.update({'_id': ObjectId(recipe_id)},
         {
             'recipe_name': request.form.get('recipe_name'),
@@ -93,7 +71,7 @@ def update_recipe(recipe_id):
             'recipe_ingredients': request.form.get('recipe_ingredients'),
             'recipe_method': request.form.get('recipe_method'),
             'recipe_country_of_origin': request.form.get('recipe_country_of_origin'),
-            'recipe_vegetarian': request.form.get('is_vegeterian'),
+            'recipe_vegetarian': request.form.get('recipe_vegetarian'),
             'recipe_vegan': request.form.get('is_vegan'),
             'recipe_allergens': request.form.get('recipe_allergens'),
             'recipe_nutricion': request.form.get('recipe_nutricion')
