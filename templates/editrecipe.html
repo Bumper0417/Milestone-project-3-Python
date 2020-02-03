@@ -66,10 +66,10 @@
                     {{ recipe.recipe_vegetarian }}
                         {% if recipe.recipe_vegetarian == "on" %}
                         
-                            <input id="is_vegeterian" name="is_vegeterian" type="checkbox" checked> 
+                            <input id="recipe_vegetarian" name="recipe_vegetarian" type="checkbox" checked> 
                         {% else %}
                         
-                            <input id="is_vegeterian" name="is_vegeterian" type="checkbox"> 
+                            <input id="recipe_vegetarian" name="recipe_vegetarian" type="checkbox"> 
                         {% endif %}
                         <span class="lever"></span>
                         Is Vegeterian
@@ -84,9 +84,9 @@
 					<label> Is the recipe Vegan?
                         {{ recipe.recipe_vegan }}
                             {% if recipe.recipe_vegan == "on" %}
-                                <input id="is_vegan" name="is_vegan" type="checkbox" checked> 
+                                <input id="recipe_vegan" name="recipe_vegan" type="checkbox" checked> 
                             {% else %}
-                                <input id="is_vegan" name="is_vegan" type="checkbox"> 
+                                <input id="recipe_vegan" name="recipe_vegan" type="checkbox"> 
                             {% endif %}
                             <span class="lever"></span>
                             Is Vegan

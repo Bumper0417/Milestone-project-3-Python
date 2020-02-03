@@ -13,14 +13,13 @@ mongo = PyMongo(app)
 
 @app.route('/')
 @app.route('/get_recipes')
-def get_recipes():
-  
+def get_recipes():  
     country= request.args.get('country')
     category= request.args.get('category')
 
     return render_template("recipes.html", recipes=mongo.db.recipes.find())
 
-### Insert text index
+# Insert text index
 @app.route('/test')
 def test():
     filter = {}
@@ -33,11 +32,9 @@ def test():
     return render_template('test.html', recipes=recipes)
 
 
-
 @app.route('/add_recipe')
 def add_recipe():
-    return render_template('addrecipe.html',
-    categories=mongo.db.categories.find())
+    return render_template('addrecipe.html', categories=mongo.db.categories.find())
 
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
@@ -49,38 +46,33 @@ def insert_recipe():
     # print the data in the console
     if 'recipe_vegetarian' in my_user_data:
         my_user_data['recipe_vegetarian'] = True
-        my_user_data['recipe_vegetarian']
+        #my_user_data['recipe_vegetarian']
     else:
         my_user_data['recipe_vegetarian'] = False
 
 
     # recipe_vegetarian = my_user_data['recipe_vegetarian']
     
-    to_insert = ""
+    #to_insert = ""
 
     # if recipe_vegetarian == "on":
     #     to_insert = True
     # else:
     #     to_insert = False
 
-    """recipe_vegan = my_user_data['recipe_vegan']
-    if recipe_vegan == "on":
-        to_insert = True
-    else:
-        to_insert = False"""
-
     # Send it to the database:
-    my_user_data['recipe_vegetarian'] = to_insert
-    ###my_user_data['recipe_vegan'] = to_insert 
+    #my_user_data['recipe_vegetarian'] = to_insert 
     recipes.insert_one(my_user_data)
 
-    return redirect(url_for('get_recipes'))
+    return redirect(url_for('get_recipes')) 
+
 
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     all_categories = mongo.db.categories.find()
     return render_template('editrecipe.html', recipe=the_recipe, categories=all_categories)
+
 
 @app.route('/update_recipe/<recipe_id>', methods=['POST'])
 def update_recipe(recipe_id):
@@ -94,19 +86,18 @@ def update_recipe(recipe_id):
             'recipe_method': request.form.get('recipe_method'),
             'recipe_country_of_origin': request.form.get('recipe_country_of_origin'),
             'recipe_vegetarian': request.form.get('recipe_vegetarian'),
-            'recipe_vegan': request.form.get('is_vegan'),
+            'recipe_vegan': request.form.get('recipe_vegan'),
             'recipe_allergens': request.form.get('recipe_allergens'),
             'recipe_nutricion': request.form.get('recipe_nutricion')
         })
-    return redirect(url_for('get_recipes'))
+    return redirect(url_for('get_recipes', recipes=recipes))
 
-#View Recipe
+# View Recipe
 @app.route('/view_recipe/<recipe_id>')
 def view_recipe(recipe_id):
     recipes = mongo.db.recipes
     my_recipe = recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template('view_recipe.html', recipe=my_recipe)
-
 
 
 @app.route('/delete_recipe/<recipe_id>')
@@ -116,26 +107,28 @@ def delete_recipe(recipe_id):
 
 @app.route('/get_categories')
 def get_categories():
-    return render_template('categories.html',
-    categories=mongo.db.categories.find())
+    return render_template('categories.html', categories=mongo.db.categories.find())
+
 
 @app.route('/edit_category/<category_id>')
 def edit_category(category_id):
-    return render_template('editcategory.html',
-    category=mongo.db.categories.find_one({'_id': ObjectId(category_id)}))
+    return render_template('editcategory.html', category=mongo.db.categories.find_one({'_id': ObjectId(category_id)}))
+
 
 @app.route('/update_category/<category_id>', methods=['POST'])
 def update_category(category_id):
     mongo.db.categories.update(
         {'_id': ObjectId(category_id)},
         {'category_name': request.form.get('category_name'),
-        'image_url':request.form.get('image_url')})
+         'image_url': request.form.get('image_url')})
     return redirect(url_for('get_categories'))
+
 
 @app.route('/delete_category/<category_id>')
 def delete_category(category_id):
     mongo.db.categories.remove({'_id': ObjectId(category_id)})
     return redirect(url_for('get_categories'))
+
 
 @app.route('/insert_category', methods=['POST'])
 def insert_category():
@@ -145,9 +138,11 @@ def insert_category():
     categories.insert_one(category_doc)
     return redirect(url_for('get_categories'))
 
+
 @app.route('/new_category')
 def new_category():
     return render_template('addcategory.html')
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
