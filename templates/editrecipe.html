@@ -64,12 +64,12 @@
 				<i class="material-icons prefix">shopping_basket</i>
 					<label> Is the recipe Vegeterian?
                     {{ recipe.recipe_vegetarian }}
-                        {% if recipe.recipe_vegetarian == "on" %}
+                        {% if recipe.recipe_vegetarian == True %}
                         
-                            <input id="recipe_vegetarian" name="recipe_vegetarian" type="checkbox" checked> 
+                            <input id="recipe_vegetarian" name="recipe_vegetarian" type="checkbox" checked value='false'> 
                         {% else %}
                         
-                            <input id="recipe_vegetarian" name="recipe_vegetarian" type="checkbox"> 
+                            <input id="recipe_vegetarian" name="recipe_vegetarian" type="checkbox" value='true'> 
                         {% endif %}
                         <span class="lever"></span>
                         Is Vegeterian
