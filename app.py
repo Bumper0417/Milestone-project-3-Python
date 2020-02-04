@@ -26,6 +26,8 @@ def test():
     suitability = request.args.get('suitability')
     if suitability == 'veg':
         filter['recipe_vegetarian'] = True
+    elif suitability == 'vegan':
+        filter['recipe_vegan'] = True
     print(filter)
     recipes = mongo.db.recipes.find(filter)
    
@@ -39,29 +41,25 @@ def add_recipe():
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
     recipes = mongo.db.recipes
-    
+
     # get the data from the form into a dictionary I can work with
     my_user_data = request.form.to_dict()
 
-    # print the data in the console
+    # Change the values from strings to booleans
     if 'recipe_vegetarian' in my_user_data:
         my_user_data['recipe_vegetarian'] = True
-        #my_user_data['recipe_vegetarian']
     else:
         my_user_data['recipe_vegetarian'] = False
 
-    print (my_user_data['recipe_vegetarian'])
-    # recipe_vegetarian = my_user_data['recipe_vegetarian']
+    my_user_data['recipe_vegetarian']
     
-    #to_insert = ""
+    if 'recipe_vegan' in my_user_data:
+        my_user_data['recipe_vegan'] = True
+    else:
+        my_user_data['recipe_vegan'] = False
 
-    # if recipe_vegetarian == "on":
-    #     to_insert = True
-    # else:
-    #     to_insert = False
+    my_user_data['recipe_vegan']
 
-    # Send it to the database:
-    #my_user_data['recipe_vegetarian'] = to_insert 
     recipes.insert_one(my_user_data)
 
     return redirect(url_for('get_recipes')) 
@@ -85,15 +83,12 @@ def update_recipe(recipe_id):
             'recipe_ingredients': request.form.get('recipe_ingredients'),
             'recipe_method': request.form.get('recipe_method'),
             'recipe_country_of_origin': request.form.get('recipe_country_of_origin'),
-            # 'recipe_vegetarian':  request.form.get('recipe_vegetarian'),
             'recipe_vegetarian': True if request.form.get('recipe_vegetarian') == 'true' else False,
-            'recipe_vegan': request.form.get('recipe_vegan'),
+            'recipe_vegan': True if request.form.get('recipe_vegan') == 'true' else False,
             'recipe_allergens': request.form.get('recipe_allergens'),
             'recipe_nutricion': request.form.get('recipe_nutricion')
         })
     return redirect(url_for('get_recipes'))
-
-    # // recipi_veg === 'False' ? false : true
 
 # View Recipe
 @app.route('/view_recipe/<recipe_id>')
