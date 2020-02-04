@@ -29,6 +29,28 @@ def test():
     elif suitability == 'vegan':
         filter['recipe_vegan'] = True
     print(filter)
+
+    country = request.args.get('country')
+    if country == 'mexico':
+        filter['country_of_origin'] = 'mexico'
+    elif country == 'italy':
+        filter['country_of_origin'] = 'italy'
+    elif country == 'greece':
+        filter['country_of_origin'] = 'greece'
+    elif country == 'thai':
+        filter['country_of_origin'] = 'thai'
+    print(filter)
+
+    category = request.args.get('category')
+    if category == 'starters':
+        filter['recipe.category_name'] = 'starters'
+    elif category == 'appetisers':
+        filter['recipe.category_name'] = 'appetisers'
+    elif category == 'maincourses':
+        filter['recipe.category_name'] = 'maincourses'
+    elif category == 'desserts':
+        filter['recipe.category_name'] = 'desserts'
+    print(filter)
     recipes = mongo.db.recipes.find(filter)
    
     return render_template('test.html', recipes=recipes)

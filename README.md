@@ -53,6 +53,7 @@ In the future i would like to add some links to social media and a registration 
 ### Front-End
 - [HTML](https://en.wikipedia.org/wiki/HTML5) Used for storing all my pages.
 - [CSS](https://no.wikipedia.org/wiki/Cascading_Style_Sheets) Used for the styling of my webpage.
+- [Javascript] (https://no.wikipedia.org/wiki/JavaScript) Used for initialising my buttons and some functions for my recipes.
 
 ### Back-End
 
