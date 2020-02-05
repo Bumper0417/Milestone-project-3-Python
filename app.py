@@ -14,11 +14,6 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_recipes')
 def get_recipes():
-    return render_template("recipes.html", recipes=mongo.db.recipes.find())
-
-# Insert text index
-@app.route('/test')
-def test():
     filter = {}
     suitability = request.args.get('suitability')
     if suitability == 'veg':
@@ -29,29 +24,30 @@ def test():
 
     country = request.args.get('country')
     if country == 'mexico':
-        filter['country_of_origin'] = 'mexico'
+        filter['recipe_country_of_origin'] = 'Mexico'
     elif country == 'italy':
-        filter['country_of_origin'] = 'italy'
+        filter['recipe_country_of_origin'] = 'Italy'
     elif country == 'greece':
-        filter['country_of_origin'] = 'greece'
+        filter['recipe_country_of_origin'] = 'Greece'
     elif country == 'thai':
-        filter['country_of_origin'] = 'thai'
+        filter['recipe_country_of_origin'] = 'Thai'
     print(filter)
 
     category = request.args.get('category')
     if category == 'starters':
-        filter['recipe.category_name'] = 'starters'
+        filter['category_name'] = 'Starters'
     elif category == 'appetisers':
-        filter['recipe.category_name'] = 'appetisers'
+        filter['category_name'] = 'Appetisers'
     elif category == 'maincourses':
-        filter['recipe.category_name'] = 'maincourses'
+        filter['category_name'] = 'Main Courses'
     elif category == 'desserts':
-        filter['recipe.category_name'] = 'desserts'
+        filter['category_name'] = 'Desserts'
     print(filter)
-    recipes = mongo.db.recipes.find(filter)
-   
-    return render_template('test.html', recipes=recipes)
-
+    if filter:
+        recipes = mongo.db.recipes.find(filter)
+    else:
+        recipes = mongo.db.recipes.find() 
+    return render_template("recipes.html", recipes=recipes)
 
 @app.route('/add_recipe')
 def add_recipe():
