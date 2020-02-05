@@ -13,10 +13,7 @@ mongo = PyMongo(app)
 
 @app.route('/')
 @app.route('/get_recipes')
-def get_recipes():  
-    #country= request.args.get('country')
-    #category= request.args.get('category')
-
+def get_recipes():
     return render_template("recipes.html", recipes=mongo.db.recipes.find())
 
 # Insert text index
@@ -165,6 +162,6 @@ def new_category():
 
 
 if __name__ == '__main__':
-    app.run(host=os.environ.get('IP'),
+    app.run(host='0.0.0.0',
             port=int(os.environ.get('PORT')),
             debug=True)
