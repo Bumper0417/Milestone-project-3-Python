@@ -109,12 +109,12 @@ The biggest problem I faced when creating this website was how to identify and i
 ## deployment
 
 My webpage is hosted deployed in Github directly from the master branch. The Live link of my webpage can be seen here:
-    [Milestone-Project-3]()
+    [Milestone-Project-3](https://happy-cooking-project-3.herokuapp.com/)
  Also the whole project can be viewed here:
     [Bumper-Milestone-Project-3](https://github.com/Bumper0417/Milestone-project-3-Python)
 
 In addition my project is deployed in Heroku and can be viewed here:    
-    [Happy-Cooking](http://happy-cooking-project-3.herokuapp.com/get_recipes)
+    [Happy-Cooking](http://happy-cooking-project-3.herokuapp.com/)
 
 The website consists of:
 1. A static folder with a css folder,which has a style.css file and a wireframes folder with 2 wireframe images. 
