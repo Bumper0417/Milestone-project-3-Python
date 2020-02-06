@@ -30,3 +30,8 @@ h2, h3, h4{
 .recipe_header{
     color:black;
 }
+
+img {
+    width:100%;
+    block-size: 400px;
+}
