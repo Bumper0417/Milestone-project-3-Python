@@ -39,3 +39,7 @@ img {
 .s3 {
     text-align: right;
 }
+
+.recipe_header{
+    flex:1;
+}
