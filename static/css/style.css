@@ -1,13 +1,15 @@
 .btn_small{
     height:24px;
-    width:60px;
+    width:65px;
     line-height: 24px;
     margin: 5px 5px;
     padding: 0 0.5em;
+    text-align: center;
 }
 
 .recipe_header {
     margin-top: 5px;
+    flex:1;
 }
 
 .nav-wrapper{
@@ -40,6 +42,9 @@ img {
     text-align: right;
 }
 
-.recipe_header{
-    flex:1;
+.flexbox {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
