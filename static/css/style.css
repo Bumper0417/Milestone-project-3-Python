@@ -7,8 +7,9 @@
     text-align: center;
 }
 
-button .waves-effect{ 
-    overflow: visible;
+.waves-effect{ 
+    overflow-x: unset;
+    overflow-y: unset;
 }
 
 .recipe_header {
