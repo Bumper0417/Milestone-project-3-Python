@@ -10,10 +10,15 @@ app.config["MONGO_URI"] = 'mongodb+srv://root:r00tUser@myfirstcluster-3k4ci.mong
 
 mongo = PyMongo(app)
 
+#----------Add Recipe Function--------------------
+
 
 @app.route('/')
 @app.route('/get_recipes')
 def get_recipes():
+
+#---------------Filter Function------------------
+
     filter = {}
     suitability = request.args.get('suitability')
     if suitability == 'veg':
@@ -49,6 +54,7 @@ def get_recipes():
         recipes = mongo.db.recipes.find() 
     return render_template("recipes.html", recipes=recipes)
 
+
 @app.route('/add_recipe')
 def add_recipe():
     return render_template('addrecipe.html', categories=mongo.db.categories.find())
@@ -60,7 +66,8 @@ def insert_recipe():
     # get the data from the form into a dictionary I can work with
     my_user_data = request.form.to_dict()
 
-    # Change the values from strings to booleans
+#--------------Change the values from strings to booleans----------
+
     if 'recipe_vegetarian' in my_user_data:
         my_user_data['recipe_vegetarian'] = True
     else:
@@ -86,6 +93,8 @@ def edit_recipe(recipe_id):
     all_categories = mongo.db.categories.find()
     return render_template('editrecipe.html', recipe=the_recipe, categories=all_categories)
 
+#---------Edit Recipe Functionality---------------------
+
 
 @app.route('/update_recipe/<recipe_id>', methods=['POST'])
 def update_recipe(recipe_id):
@@ -98,6 +107,7 @@ def update_recipe(recipe_id):
             'recipe_ingredients': request.form.get('recipe_ingredients'),
             'recipe_method': request.form.get('recipe_method'),
             'recipe_country_of_origin': request.form.get('recipe_country_of_origin'),
+            #---Change strings to booleans-----
             'recipe_vegetarian': True if request.form.get('recipe_vegetarian') == 'true' else False,
             'recipe_vegan': True if request.form.get('recipe_vegan') == 'true' else False,
             'recipe_allergens': request.form.get('recipe_allergens'),
@@ -105,18 +115,25 @@ def update_recipe(recipe_id):
         })
     return redirect(url_for('get_recipes'))
 
-# View Recipe
+#--------------View Recipe----------------
+
+
 @app.route('/view_recipe/<recipe_id>')
 def view_recipe(recipe_id):
     recipes = mongo.db.recipes
     my_recipe = recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template('view_recipe.html', recipe=my_recipe)
 
+#-----------Delete Recipe Function
+
 
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('get_recipes'))
+
+#------------Categories---------------
+   
 
 @app.route('/get_categories')
 def get_categories():

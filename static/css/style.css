@@ -1,3 +1,5 @@
+/*--------Buttons--------*/
+
 .btn_small{
     height:24px;
     width:65px;
@@ -7,15 +9,20 @@
     text-align: center;
 }
 
+.recipe_header {
+    color:black;
+    margin-top: 5px;
+    flex:1;
+}
+
+/*--------Filter Button--------*/
 .waves-effect{ 
     overflow-x: unset;
     overflow-y: unset;
 }
 
-.recipe_header {
-    margin-top: 5px;
-    flex:1;
-}
+/*--------Navigation--------*/
+
 
 .nav-wrapper{
     background-color: #b34d4d;
@@ -34,9 +41,7 @@ h2, h3, h4{
     text-align: center;
 }
 
-.recipe_header{
-    color:black;
-}
+/*-------View Recipe Styling------*/
 
 img {
     width:100%;
@@ -53,10 +58,21 @@ img {
     align-items: center;
 }
 
+.row .col.s6{
+    width:40;
+}
+
+/*-------Media Queries------*/
+
 @media only screen and (max-width: 992px){
     nav .brand-logo {
         width:100%;
         text-align: center;
+    }
+}
+@media only screen and (min-width: 0){
+    html {
+    font-size: 14px;
     }
 }
 
