@@ -8,7 +8,7 @@ My Happy Cooking Webpage is an interactive webpage, which main purpose is to exp
 
 My main purpose when creating the webpage was to ensure that it covers a wide range of recipes from all over the world that can be easily accessed and manipulated.
 
-**User Stories**
+### User Stories
 
 - As a user of the webpage I want to be able to view all the recipes that the owner of the webpage has provided by clicking a button in the home page.
 - As a user I want to specify my search criteria and be able to get results for recipes that fit for vegans and vegeterians.
@@ -23,7 +23,7 @@ My main purpose when creating the webpage was to ensure that it covers a wide ra
 - As a user I want to access the webpage from all differend types of divices (MObile Phones, Desktops,Laptops, Tablets, etc.)
 - As a user of the webpage I want to be able to insert an image in when inserting or updating a recipe. 
 
-**Wireframes** 
+### Wireframes 
 
 ![Mobile-Version](static/wireframes/IMG_4847.jpg)
 ![Desktop-Version](static/wireframes/IMG_4846.jpg)
@@ -46,6 +46,7 @@ In the future i would like to add some links to social media and a registration 
 ## Technologies Used
 
 ### Front-End
+
 - [HTML](https://en.wikipedia.org/wiki/HTML5) Used for storing all my pages.
 - [CSS](https://no.wikipedia.org/wiki/Cascading_Style_Sheets) Used for the styling of my webpage.
 - [Javascript](https://no.wikipedia.org/wiki/JavaScript) Used for initialising my buttons and some functions for my recipes.
@@ -70,6 +71,7 @@ In the future i would like to add some links to social media and a registration 
 - For the potencial users of my webpage that want to be able to see the recipes by clicking a button I have created a view button from Materialise and is triggered in my view_recipe.html with jinja. 
 
 **Add Recipe Functionality:**
+
 | Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
 | :-------------: |:----------------:| :--------------: | :---------: |
 | Clicking on Add recipe button without filling all the forms | Displays Validation to tell the user to enter all the forms | As Expected | Pass |
@@ -77,6 +79,7 @@ In the future i would like to add some links to social media and a registration 
 | Click on View Button to the recipe that you added | All the information of the recipe display fine | As expected | Pass | 
 
 **Edit Recipe Functionality:**
+
 | Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
 | :-------------: |:----------------:| :--------------: | :---------: |
 | Clicking on Edit recipe button without filling all the forms | Displays Validation to tell the user to enter all the forms | As Expected | Pass |
@@ -84,11 +87,13 @@ In the future i would like to add some links to social media and a registration 
 | Click on View Button to the recipe that you added | All the information of the recipe display fine | As expected | Pass | 
 
 **Delete Recipe Functionality:**
+
 | Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
 | :-------------: |:----------------:| :--------------: | :---------: |
 | Clicking on Delete recipe button | Removes the recipe and redirects to the home page | As Expected | Pass |
 
-**Categories CRUD Functionality**
+**Categories CRUD Functionality:**
+
 | Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
 | :-------------: |:----------------:| :--------------: | :---------: |
 | Clicking on Add Category button without filling all the forms | Displays Validation to tell the user to enter all the forms | As Expected | Pass |
@@ -98,6 +103,7 @@ In the future i would like to add some links to social media and a registration 
 | Clicking Delete Category button | Removes the category and redirects to the categories page | As expected | Pass |
 
 **Filter Functionality:**
+
 | Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
 | :-------------: |:----------------:| :--------------: | :---------: |
 | Clicking on filter button when choosing vegeterian in suitability | Displays all the recipes that fit for vegeterians | As Expected | Pass |
@@ -110,6 +116,7 @@ In the future i would like to add some links to social media and a registration 
 | Clicking on filter button when applying multiple filters | Displays all the recipes that fit to the category,country of origin and suitability that are selected | As Expected | Pass |
 
 **Styling of the Webpage:**
+
 | Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
 | :-------------: |:----------------:| :--------------: | :---------: |
 | Right click on the webpage and press inspect | The webpage displays fine in all types of devices  | As Expected | Pass |
@@ -122,13 +129,13 @@ The biggest problem I faced when creating this website was how to identify and i
 
 ## Deployment
 
-My webpage is hosted deployed in Github directly from the master branch. The Live link of my webpage can be seen here:
-    [Milestone-Project-3](https://happy-cooking-project-3.herokuapp.com/)
+My webpage is hosted and deployed in Github directly from the master branch. The Live link of my webpage can be seen here:
+-[Milestone-Project-3](https://happy-cooking-project-3.herokuapp.com/)
  Also the whole project can be viewed here:
-    [Bumper-Milestone-Project-3](https://github.com/Bumper0417/Milestone-project-3-Python)
+-[Bumper-Milestone-Project-3](https://github.com/Bumper0417/Milestone-project-3-Python)
 
 In addition my project is deployed in Heroku and can be viewed here:    
-    [Happy-Cooking](http://happy-cooking-project-3.herokuapp.com/)
+-[Happy-Cooking](http://happy-cooking-project-3.herokuapp.com/)
 
 The website consists of:
 1. A static folder with a css folder,which has a style.css file and a wireframes folder with 2 wireframe images. 
