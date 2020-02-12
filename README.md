@@ -130,10 +130,12 @@ The biggest problem I faced when creating this website was how to identify and i
 ## Deployment
 
 My webpage is hosted in Github and deployed directly from the master branch. The whole project can be viewed here:
--[Bumper-Milestone-Project-3](https://github.com/Bumper0417/Milestone-project-3-Python)
 
-In addition my project is deployed in Heroku and the live link can be viewed here:    
--[Happy-Cooking](https://happy-cooking-project-3.herokuapp.com/)
+[Bumper-Milestone-Project-3](https://github.com/Bumper0417/Milestone-project-3-Python)
+
+In addition my project is deployed in Heroku and the live link can be viewed here: 
+
+[Happy-Cooking](https://happy-cooking-project-3.herokuapp.com/)
 
 The website consists of:
 1. A static folder with a css folder,which has a style.css file and a wireframes folder with 2 wireframe images. 
