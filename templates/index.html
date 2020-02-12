@@ -11,6 +11,8 @@
     </head>
     <body>
     <header>
+
+<!---------------------------------Navigation Bar----------------------------------------->
         <nav>
             <div class="nav-wrapper">
                 <a href="{{url_for('get_recipes')}}" class="brand-logo">Happy Cooking</a>
@@ -28,6 +30,8 @@
             </div>
         </nav>
     </header>
+
+<!-------------------------------------------Recipes Container-------------------------------------->
         <div class="container">
             {% block content %}
             {% endblock %}

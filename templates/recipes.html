@@ -3,6 +3,8 @@
     
     <h2>Discover your passion about Cooking!</h2>
     <h4>Check our Recipes by Clicking the View Button</h4>
+
+<!------------------------Filter Function---------------------------------->
     
     <form action="{{url_for('get_recipes')}}"class="flexbox" method="GET">
         <div>
@@ -35,8 +37,9 @@
         </div>
         <button type="submit" class="waves-effect waves-light btn blue">Filter</button>
     </form> 
-        
+<!---------------/Filter Function----------------------->        
     <br>
+<!----------------------Recipes And Buttons----------------------------------->
     {% for recipe in recipes %}
         <div class="collapsible-header">
         
