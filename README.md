@@ -80,12 +80,24 @@ In the future i would like to add some links to social media and a registration 
 6. Click to view the recipe and make sure that all the fields display correctly.
 7. Try deleting your recipe and check if it is removed from your recipes section.
 
-Add Recipe Functionality
+*Add Recipe Functionality:*
 | Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
 | :-------------: |:----------------:| :--------------: | :---------: |
 | Clicking on Add recipe button without filling all the forms | Displays Validation to tell the user to enter all the forms | As Expected | Pass |
-| col 2 is      | centered         |   $12          | .         |
-| zebra stripes | are neat         |    $1          |           | 
+| Clicking Add Recipe button after filling all the forms | Redirect to the home page and the recipe is added | As expected | Pass |
+| Click on View Button to the recipe that you added | All the information of the recipe display fine | As expected | Pass | 
+
+*Edit Recipe Functionality:*
+| Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
+| :-------------: |:----------------:| :--------------: | :---------: |
+| Clicking on Edit recipe button without filling all the forms | Displays Validation to tell the user to enter all the forms | As Expected | Pass |
+| Clicking Edit Recipe button after filling all the forms | Redirect to the home page and the recipe is edited | As expected | Pass |
+| Click on View Button to the recipe that you added | All the information of the recipe display fine | As expected | Pass | 
+
+*Delete Recipe Functionality:*
+| Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
+| :-------------: |:----------------:| :--------------: | :---------: |
+| Clicking on Delete recipe button | Removes the recipe and redirects to the home page | As Expected | Pass |
 
 
 - To check if the edit function is working in recipes:
