@@ -8,6 +8,8 @@ My Happy Cooking Webpage is an interactive webpage, which main purpose is to exp
 
 My main purpose when creating the webpage was to ensure that it covers a wide range of recipes from all over the world that can be easily accessed and manipulated.
 
+### User Stories
+
 - As a user of the webpage I want to be able to view all the recipes that the owner of the webpage has provided by clicking a button in the home page.
 - As a user I want to specify my search criteria and be able to get results for recipes that fit for vegans and vegeterians.
 - As a user of the webpage I want to specify my search criteria and be able to get results for recipes from particular countries.
@@ -21,7 +23,7 @@ My main purpose when creating the webpage was to ensure that it covers a wide ra
 - As a user I want to access the webpage from all differend types of divices (MObile Phones, Desktops,Laptops, Tablets, etc.)
 - As a user of the webpage I want to be able to insert an image in when inserting or updating a recipe. 
 
-## Wireframes 
+### Wireframes 
 
 ![Mobile-Version](static/wireframes/IMG_4847.jpg)
 ![Desktop-Version](static/wireframes/IMG_4846.jpg)
@@ -43,17 +45,13 @@ In the future i would like to add some links to social media and a registration 
 
 ## Technologies Used
 
-- [Materialise](https://materializecss.com/) Used for styling of the webpage
-- [Git](https://en.wikipedia.org/wiki/Git) Used for writting commands and inserting new documents in my webpage
-- [Github]() Used to store my webpage for the users to have access to that and for my tutors and mentor to help me with my Milestone Project
-- [Material-Icons]( https://material.io/resources/icons/?style=baseline) used for styling my input elements.
-- [Jquery](https://en.wikipedia.org/wiki/JQuery) Used for manipulating the dom and add the elements to my project.
-- [Heroku](https://en.wikipedia.org/wiki/Heroku) Used for the deployment of my project.
-
 ### Front-End
 - [HTML](https://en.wikipedia.org/wiki/HTML5) Used for storing all my pages.
 - [CSS](https://no.wikipedia.org/wiki/Cascading_Style_Sheets) Used for the styling of my webpage.
-- [Javascript] (https://no.wikipedia.org/wiki/JavaScript) Used for initialising my buttons and some functions for my recipes.
+- [Javascript](https://no.wikipedia.org/wiki/JavaScript) Used for initialising my buttons and some functions for my recipes.
+- [Materialise](https://materializecss.com/) Used for styling of the webpage
+- [Material-Icons]( https://material.io/resources/icons/?style=baseline) used for styling my input elements.
+- [Jquery](https://en.wikipedia.org/wiki/JQuery) Used for manipulating the dom and add the elements to my project.
 
 ### Back-End
 
@@ -63,6 +61,9 @@ In the future i would like to add some links to social media and a registration 
 - [PyMongo 3.8.0](https://api.mongodb.com/python/current/) MongoDB's API to interact with the data.
 - [Jinja](https://en.wikipedia.org/wiki/Jinja_(template_engine)) Used for displaying elements from back-end to front0end.
 - [BSON ObjectId](https://en.wikipedia.org/wiki/BSON) Used for creating "id's" in the Mongo database.
+- [Git](https://en.wikipedia.org/wiki/Git) Used for writting commands and inserting new documents in my webpage
+- [Github](https://github.com/) Used to store my webpage for the users to have access to that and for my tutors and mentor to help me with my Milestone Project
+- [Heroku](https://en.wikipedia.org/wiki/Heroku) Used for the deployment of my project.
 
 ## Testing
 
@@ -78,6 +79,14 @@ In the future i would like to add some links to social media and a registration 
 5. Check if you are redirected in the home page and if your recipe is there.
 6. Click to view the recipe and make sure that all the fields display correctly.
 7. Try deleting your recipe and check if it is removed from your recipes section.
+
+Add Recipe Functionality
+| Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
+| ------------- |:----------------:| --------------:| ---------:|
+| Clicking on Add recipe button without filling all the forms | Displays Validation to tell the user to enter all the forms | As Expected | Pass |
+| col 2 is      | centered         |   $12          | .         |
+| zebra stripes | are neat         |    $1          |           | 
+
 
 - To check if the edit function is working in recipes:
 1. Try pressing the edit button in one of the recipes.
@@ -106,7 +115,7 @@ In the future i would like to add some links to social media and a registration 
 
 The biggest problem I faced when creating this website was how to identify and implement the search functionality, which at the end it was a very interesting feature.
 
-## deployment
+## Deployment
 
 My webpage is hosted deployed in Github directly from the master branch. The Live link of my webpage can be seen here:
     [Milestone-Project-3](https://happy-cooking-project-3.herokuapp.com/)
