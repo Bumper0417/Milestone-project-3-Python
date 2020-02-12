@@ -61,7 +61,6 @@ In the future i would like to add some links to social media and a registration 
 - [MongoDB Atlas](https://en.wikipedia.org/wiki/MongoDB) To store all the data and collections of my webpage
 - [PyMongo 3.8.0](https://api.mongodb.com/python/current/) MongoDB's API to interact with the data.
 - [Jinja](https://en.wikipedia.org/wiki/Jinja_(template_engine)) Used for displaying elements from back-end to front0end.
-- [BSON ObjectId](https://en.wikipedia.org/wiki/BSON) Used for creating "id's" in the Mongo database.
 - [Git](https://en.wikipedia.org/wiki/Git) Used for writting commands and inserting new documents in my webpage
 - [Github](https://github.com/) Used to store my webpage for the users to have access to that and for my tutors and mentor to help me with my Milestone Project
 - [Heroku](https://en.wikipedia.org/wiki/Heroku) Used for the deployment of my project.
