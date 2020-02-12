@@ -8,7 +8,7 @@ My Happy Cooking Webpage is an interactive webpage, which main purpose is to exp
 
 My main purpose when creating the webpage was to ensure that it covers a wide range of recipes from all over the world that can be easily accessed and manipulated.
 
-### User Stories
+**User Stories**
 
 - As a user of the webpage I want to be able to view all the recipes that the owner of the webpage has provided by clicking a button in the home page.
 - As a user I want to specify my search criteria and be able to get results for recipes that fit for vegans and vegeterians.
@@ -23,7 +23,7 @@ My main purpose when creating the webpage was to ensure that it covers a wide ra
 - As a user I want to access the webpage from all differend types of divices (MObile Phones, Desktops,Laptops, Tablets, etc.)
 - As a user of the webpage I want to be able to insert an image in when inserting or updating a recipe. 
 
-### Wireframes 
+**Wireframes** 
 
 ![Mobile-Version](static/wireframes/IMG_4847.jpg)
 ![Desktop-Version](static/wireframes/IMG_4846.jpg)
@@ -69,59 +69,52 @@ In the future i would like to add some links to social media and a registration 
 
 - For the potencial users of my webpage that want to be able to see the recipes by clicking a button I have created a view button from Materialise and is triggered in my view_recipe.html with jinja. 
 
-- The search function that I used in my recipes.html allow the users to specify their search regarding their needs(Country. Category, Suitability). The elements are triggered with jinja and i used the [text index](https://docs.mongodb.com/manual/text-search/#example) function from MongoDB.
-
-- All the recipes are tested for the CRUD functinality. I verify that a user can easily create,read, update and delete any of my recipes by clicking the appropriate buttons.You can check it manually:
-1. Go to the "Add your Recipe" section. 
-2. Fill in the form with ingredients, image of the recipe, category, ingredients, method of cooking, allergens etc.
-3. Ensure that you fill up all the sections otherwise the validation form will send you a notification about that.
-4. Submit your changes by clicking the add recipe button.
-5. Check if you are redirected in the home page and if your recipe is there.
-6. Click to view the recipe and make sure that all the fields display correctly.
-7. Try deleting your recipe and check if it is removed from your recipes section.
-
-*Add Recipe Functionality:*
+**Add Recipe Functionality:**
 | Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
 | :-------------: |:----------------:| :--------------: | :---------: |
 | Clicking on Add recipe button without filling all the forms | Displays Validation to tell the user to enter all the forms | As Expected | Pass |
 | Clicking Add Recipe button after filling all the forms | Redirect to the home page and the recipe is added | As expected | Pass |
 | Click on View Button to the recipe that you added | All the information of the recipe display fine | As expected | Pass | 
 
-*Edit Recipe Functionality:*
+**Edit Recipe Functionality:**
 | Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
 | :-------------: |:----------------:| :--------------: | :---------: |
 | Clicking on Edit recipe button without filling all the forms | Displays Validation to tell the user to enter all the forms | As Expected | Pass |
-| Clicking Edit Recipe button after filling all the forms | Redirect to the home page and the recipe is edited | As expected | Pass |
+| Clicking Edit Recipe button after changing some of the forms | Redirect to the home page and the recipe is edited | As expected | Pass |
 | Click on View Button to the recipe that you added | All the information of the recipe display fine | As expected | Pass | 
 
-*Delete Recipe Functionality:*
+**Delete Recipe Functionality:**
 | Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
 | :-------------: |:----------------:| :--------------: | :---------: |
 | Clicking on Delete recipe button | Removes the recipe and redirects to the home page | As Expected | Pass |
 
+**Categories CRUD Functionality**
+| Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
+| :-------------: |:----------------:| :--------------: | :---------: |
+| Clicking on Add Category button without filling all the forms | Displays Validation to tell the user to enter all the forms | As Expected | Pass |
+| Clicking Add Category button after filling all the forms | Redirect to the categories page and the category is added | As expected | Pass |
+| Click on Edit Category button to a category and press the edit button without filling the forms | Displays Validation to tell the user to enter all the forms | As expected | Pass | 
+| Clicking Edit Recipe button after changing some of the forms | Redirect to the categories page and the category is edited | As expected | Pass |
+| Clicking Delete Category button | Removes the category and redirects to the categories page | As expected | Pass |
 
-- To check if the edit function is working in recipes:
-1. Try pressing the edit button in one of the recipes.
-2. Try change the fields and press the button edit recipe.
-3. Check if you are redirected in the home page and press the view button to see if the recipe is edited.
+**Filter Functionality:**
+| Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
+| :-------------: |:----------------:| :--------------: | :---------: |
+| Clicking on filter button when choosing vegeterian in suitability | Displays all the recipes that fit for vegeterians | As Expected | Pass |
+| Clicking on filter button when choosing vegan in suitability | Displays all the recipes that fit for vegans | As Expected | Pass || Click on Edit Category button to a category and press the edit button without filling the forms | Displays Validation to tell the user to enter all the forms | As expected | Pass | 
+| Clicking on filter button when choosing Mexico in country | Displays all the recipes that originated form Mexico | As Expected | Pass |
+| Clicking on filter button when choosing Thai in country | Displays all the recipes that originated from Thailand | As Expected | Pass |
+| Clicking on filter button when choosing Greece in country | Displays all the recipes that originated from Greece | As Expected | Pass |
+| Clicking on filter button when choosing Italy in country | Displays all the recipes that originated from Italy | As Expected | Pass |
+| Clicking on filter button when choosing a specific Category in category | Displays all the recipes that refer to this specific category | As Expected | Pass |
+| Clicking on filter button when applying multiple filters | Displays all the recipes that fit to the category,country of origin and suitability that are selected | As Expected | Pass |
 
-- To check if the edit function is working in categories:
-1. Try pressing the edit button in one of the categories.
-2. Try change the fields and press the button edit category.
-3. Check if you are redirected in the home page and check if the category is edited in the categories section.
-
-- To check if the add category works in the categories field:
-1. Go to the "Categories" section.
-2. Fill in the form(Category name, Image Url).
-3. Click the add category button and ensure that you are redirected in the home page and if your category is there.
-4. Make sure that when adding a recipe the image of your new category displays next to each name.
-5. Try deleting the category and check if it is deleted from the categories section.
-
-- All the forms in the editcategory.html,addcategory.html,editrecipe.html,addrecipe.html have a validation form that is checked manually and working properly.
+**Styling of the Webpage:**
+| Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
+| :-------------: |:----------------:| :--------------: | :---------: |
+| Right click on the webpage and press inspect | The webpage displays fine in all types of devices  | As Expected | Pass |
 
 - The Navigation Bar that the webpage is using is tested for all the types of devices and is working properly.
-
-- The styling of the webpage applies to all different types of devices and is tested manually.
 
 - The site is tested in a variety of devices such as:Iphones(4 to 10),Samsung Galaxy,Ipads and Desktops.In addition it's tested to all the possible browsers:Chrome, Safari, Internet Explorer, FireFox and i assure that it is compatible and responsive.
 
