@@ -82,7 +82,7 @@ In the future i would like to add some links to social media and a registration 
 
 Add Recipe Functionality
 | Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
-| ------------- |:----------------:| --------------:| ---------:|
+| :-------------: |:----------------:| :--------------: | :---------: |
 | Clicking on Add recipe button without filling all the forms | Displays Validation to tell the user to enter all the forms | As Expected | Pass |
 | col 2 is      | centered         |   $12          | .         |
 | zebra stripes | are neat         |    $1          |           | 
